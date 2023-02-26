@@ -17,6 +17,8 @@ const Contact = () => {
             axios.post("/users", dataMessage).then(res => {
                 console.log("send Request")
             })
+        }else {
+            alert('Заполните поля')
         }
     }
 
