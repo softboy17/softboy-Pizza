@@ -8,14 +8,16 @@ const Contact = () => {
     const [message, setMessage] = useState("")
 
     const sendMessage = ()=> {
-        const dataMessage = {
-            name,
-            email,
-            message
+        if(name && email !==''){
+            const dataMessage = {
+                name,
+                email,
+                message
+            }
+            axios.post("/users", dataMessage).then(res => {
+                console.log("send Request")
+            })
         }
-        axios.post("/users", dataMessage).then(res => {
-            console.log("send Request")
-        })
     }
 
     return (
